@@ -1,0 +1,3 @@
+package com.energie.platform.controller;
+import com.energie.platform.dto.Dtos.*; import com.energie.platform.service.RendezVousService; import io.swagger.v3.oas.annotations.*; import io.swagger.v3.oas.annotations.tags.Tag; import jakarta.validation.Valid; import lombok.RequiredArgsConstructor; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/rendez-vous") @Tag(name="Public - Rendez-vous") @RequiredArgsConstructor public class RendezVousController {private final RendezVousService service; @PostMapping @ResponseStatus(HttpStatus.CREATED) @Operation(summary="Planifier un rendez-vous") public RendezVousResponse planifier(@Valid @RequestBody RendezVousCreationRequest r){return service.planifier(r);}}

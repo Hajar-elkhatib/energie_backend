@@ -1,0 +1,3 @@
+package com.energie.platform.controller;
+import com.energie.platform.dto.Dtos.RegionResponse; import com.energie.platform.service.RegionService; import io.swagger.v3.oas.annotations.*; import io.swagger.v3.oas.annotations.tags.Tag; import lombok.RequiredArgsConstructor; import org.springframework.web.bind.annotation.*; import java.util.*;
+@RestController @RequestMapping("/api/regions") @Tag(name="Public - Régions") @RequiredArgsConstructor public class RegionController {private final RegionService service; @GetMapping @Operation(summary="Lister les régions, primes et lois") public List<RegionResponse> liste(){return service.liste();}}

@@ -1,0 +1,3 @@
+package com.energie.platform.security;
+import com.energie.platform.repository.Repositories.AdministrateurRepository; import lombok.RequiredArgsConstructor; import org.springframework.security.core.userdetails.*; import org.springframework.stereotype.Service;
+@Service @RequiredArgsConstructor public class AdminUserDetailsService implements UserDetailsService {private final AdministrateurRepository repo; public UserDetails loadUserByUsername(String login){var a=repo.findByLogin(login).orElseThrow(()->new UsernameNotFoundException(login));return User.withUsername(a.getLogin()).password(a.getMotDePasse()).roles("ADMIN").build();}}
