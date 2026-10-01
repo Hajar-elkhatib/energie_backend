@@ -10,9 +10,22 @@ Backend Spring Boot 3 / Java 17 de génération de demandes pour la rénovation 
 
 La base locale est `energie_platform_db`, avec l'utilisateur `energie_dev` et le mot de passe `energie_dev_password`.
 
-Identifiants de développement : `admin` / `password`. Au premier démarrage du profil `dev`, le marqueur BCrypt du jeu SQL est remplacé une seule fois par un hash BCrypt frais; un mot de passe modifié ensuite n’est pas écrasé.
+Identifiants de développement : `admin` / `admin123`. Au premier démarrage du profil `dev`, le marqueur BCrypt du jeu SQL est remplacé une seule fois par un hash BCrypt frais; un mot de passe modifié ensuite n’est pas écrasé.
 
 La clé de développement du service IA est `dev-ai-api-key-change-me`, à envoyer dans l’en-tête `X-API-KEY`. En production, définir `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `JWT_SECRET` et `AI_API_KEY` avec des secrets sûrs.
+
+### E-mail de confirmation des rendez-vous
+
+Une demande créée par un visiteur reste au statut `PLANIFIE`. L’administrateur la confirme depuis le tableau de bord ; le backend envoie alors un e-mail à l’adresse du visiteur. Gmail SMTP est préconfiguré. Activez la validation en deux étapes du compte Gmail expéditeur, créez un **mot de passe d’application**, puis exécutez ceci dans PowerShell avant de démarrer le backend :
+
+```powershell
+$env:MAIL_ENABLED = "true"
+$env:MAIL_FROM = "votre.adresse@gmail.com"
+$env:MAIL_USERNAME = "votre.adresse@gmail.com"
+$env:MAIL_PASSWORD = "mot-de-passe-application-Google"
+```
+
+En développement, `MAIL_ENABLED` est désactivé par défaut pour éviter tout envoi accidentel. Aucun mot de passe SMTP ne doit être ajouté dans les fichiers du projet. Pour un autre fournisseur, remplacez aussi `MAIL_HOST` et, si nécessaire, `MAIL_PORT`.
 
 ## Sécurité
 

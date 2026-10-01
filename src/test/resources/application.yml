@@ -13,8 +13,13 @@ spring:
       mode: always
       data-locations: classpath:data-test.sql
 app:
+  mail:
+    enabled: true
+    from: no-reply@test.ecoreno.local
   jwt:
     secret: test-jwt-secret-that-is-at-least-thirty-two-characters-long
     expiration-ms: 86400000
   ai:
     api-key: test-ai-key
+  cors:
+    allowed-origins: http://localhost:*

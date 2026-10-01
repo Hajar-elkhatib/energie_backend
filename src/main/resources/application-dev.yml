@@ -1,8 +1,19 @@
 spring:
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   datasource:
     url: jdbc:postgresql://localhost:5432/energie_plateforme
     username: postgres
-    password: 12345678
+    password: 123456789
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -12,3 +23,15 @@ spring:
   sql:
     init:
       mode: always
+app:
+  mail:
+    # Gmail SMTP est prêt ; activez-le après avoir défini MAIL_USERNAME, MAIL_PASSWORD et MAIL_FROM.
+    enabled: ${MAIL_ENABLED:false}
+    from: ${MAIL_FROM:}
+  jwt:
+    secret: ${JWT_SECRET:development-only-jwt-secret-change-before-production-123456789}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  ai:
+    api-key: ${AI_API_KEY:dev-ai-api-key-change-me}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:*,http://127.0.0.1:*}

@@ -10,4 +10,4 @@ import com.energie.platform.dto.Dtos.*; import com.energie.platform.service.*; i
  @PutMapping("/regions/{id}") @Operation(summary="Configurer lois, primes et champs d'une région") public RegionResponse modifierRegion(@PathVariable Long id,@Valid @RequestBody RegionUpdateRequest r){return regions.modifier(id,r);}
  @GetMapping("/rendez-vous") @Operation(summary="Consulter le planning") public List<RendezVousResponse> planning(){return rendezVous.liste();}
  @PutMapping("/rendez-vous/{id}") @Operation(summary="Modifier le statut d'un rendez-vous") public RendezVousResponse modifierRendezVous(@PathVariable Long id,@Valid @RequestBody RendezVousStatutRequest r){return rendezVous.modifier(id,r);}
- @GetMapping("/statistiques") @Operation(summary="Consulter le tableau de bord") public StatistiquesResponse statistiques(){return admin.statistiques();}}
+ @GetMapping("/statistiques") @Operation(summary="Consulter le tableau de bord") public ResponseEntity<StatistiquesResponse> statistiques(){return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(admin.statistiques());}}

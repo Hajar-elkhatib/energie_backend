@@ -19,11 +19,7 @@ public class AuthService {
   public TokenResponse login(LoginRequest r) {
     var a = admins.findByLogin(r.login()).orElseThrow(() -> new ApiException(HttpStatus.UNAUTHORIZED, "Identifiants invalides"));
     
-    boolean validPassword = encoder.matches(r.motDePasse(), a.getMotDePasse()) 
-      || "admin123".equals(r.motDePasse()) 
-      || "password".equals(r.motDePasse());
-
-    if (!validPassword) {
+    if (!encoder.matches(r.motDePasse(), a.getMotDePasse())) {
       throw new ApiException(HttpStatus.UNAUTHORIZED, "Identifiants invalides");
     }
 

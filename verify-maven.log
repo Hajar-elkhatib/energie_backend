@@ -1,0 +1,75 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.energie:energie-platform >--------------------
+[INFO] Building energie-platform 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ energie-platform ---
+[INFO] Deleting C:\Users\hp\Documents\energy_plateforme_bg\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ energie-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ energie-platform ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 52 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ energie-platform ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ energie-platform ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ energie-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.energie.platform.EndToEndApiIT
+15:39:37.605 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.energie.platform.EndToEndApiIT]: EndToEndApiIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:39:38.496 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.energie.platform.EnergiePlatformApplication for test class com.energie.platform.EndToEndApiIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-09-14T15:39:41.063+01:00  INFO 18604 --- [           main] com.energie.platform.EndToEndApiIT       : Starting EndToEndApiIT using Java 17.0.9 with PID 18604 (started by hp in C:\Users\hp\Documents\energy_plateforme_bg)
+2026-09-14T15:39:41.070+01:00  INFO 18604 --- [           main] com.energie.platform.EndToEndApiIT       : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T15:39:45.786+01:00  INFO 18604 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T15:39:46.038+01:00  INFO 18604 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 227 ms. Found 13 JPA repository interfaces.
+2026-09-14T15:39:49.749+01:00  INFO 18604 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-14T15:39:50.317+01:00  INFO 18604 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-09-14T15:39:50.502+01:00  INFO 18604 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-14T15:39:52.513+01:00  INFO 18604 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T15:39:52.667+01:00  INFO 18604 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T15:39:53.516+01:00  INFO 18604 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:energie user=SA
+2026-09-14T15:39:53.520+01:00  INFO 18604 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T15:39:59.979+01:00  INFO 18604 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T15:40:00.384+01:00  INFO 18604 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T15:40:04.286+01:00  WARN 18604 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T15:40:04.377+01:00  INFO 18604 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name adminUserDetailsService
+2026-09-14T15:40:09.952+01:00  INFO 18604 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-14T15:40:09.956+01:00  INFO 18604 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-14T15:40:10.051+01:00  INFO 18604 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-09-14T15:40:10.177+01:00  INFO 18604 --- [           main] com.energie.platform.EndToEndApiIT       : Started EndToEndApiIT in 30.721 seconds (process running for 38.627)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.42 s -- in com.energie.platform.EndToEndApiIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:47 min
+[INFO] Finished at: 2026-09-14T15:40:21+01:00
+[INFO] ------------------------------------------------------------------------
